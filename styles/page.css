@@ -1,0 +1,73 @@
+body {
+    background-color: #607D8B;
+    font-family: verdana, arial;
+    color: #FFF;
+}
+
+.navbar * {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.navbar {
+    margin-bottom: 20px;
+    background-color: rgba(63, 61, 181, 0.8);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    height: 120px;
+}
+
+.shrinkNav {
+    height: 20px;
+}
+
+.avatar {
+    width: 110px;
+}
+
+.shrinkAvatar {
+    width: 40px;
+}
+
+.navbar-default {
+    border-color: #303F9F;
+}
+
+.liveContent {
+    margin-top: 130px;
+}
+
+.trophyTotals {
+    margin: auto;
+    height: 50px;
+    width: 288px;
+}
+
+.wrap {
+    padding: 18px;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.slide.ng-enter,
+.slide.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.slide.ng-enter {
+    left: 100%;
+}
+.slide.ng-enter-active {
+    left: 0;
+}
+.slide.ng-leave {
+    left: 0;
+}
+.slide.ng-leave-active {
+    left: -100%;
+}

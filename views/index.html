@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trophy Draw</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' integrity='sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==' crossorigin='anonymous'>
+    <link href='/trophyDraw.css' rel='stylesheet'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/trophyDraw.js"></script>
+</head>
+
+<body ng-app="trophyDraw" ng-controller="ApplicationCtrl">
+    <nav id='navbar' ng-if='userData && games' nav-scroll ng-class='{shrinkNav:scrollAnimate}' class='navbar navbar-default navbar-fixed-top'>
+        <div class='container'>
+            <img  class='avatar' ng-class='{shrinkAvatar:scrollAnimate}' ng-src='{{userData.avatarUrl}}'/>
+            <!-- <span>{{userData.handle}}</span>
+            <span>{{userData.curLevel}}</span>
+            <img ng-if='userData.isPlusUser' src='https://www.playstation.com/en-us/etc/designs/pdc/clientlibs_base/images/nav/psp_logo.png'/>
+            <span>{{userData.currLevel}}</span>
+            <span>{{userData.progress}}</span> -->
+            <!-- <div class='trophyTotals'>
+                <ul class='trophyBreakdown'>
+                    <li ng-repeat='trophy in trophyOrder'>
+                        <div class='wrap'>
+                            <span>{{trophy}}</span>
+                            <div style='background-image: url(//media.playstation.com/is/image/SCEA/myplaystation-{{trophy}}trophy-us-07may15)'>
+                                {{userData.trophies[trophy]}}
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div> -->
+
+        </div>
+    </nav>
+    <div class='liveContent slide' ng-view></div>
+</body>
+</html>

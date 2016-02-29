@@ -1,0 +1,108 @@
+.gameContainer {
+    text-align: center;
+}
+
+.gameLayout {
+    width: 320px;
+    height: 176px;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.gameDetails {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    background-color: rgba(3, 3, 3, 0.5);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.gameDetails:hover {
+    opacity: 1;
+}
+
+.gameTitle {
+    font-size: 14px;
+    font-style: italic;
+    margin: 5px auto;
+}
+
+.gameTitle span {
+    font-size: 12px;
+}
+
+.trophyWrapper {
+    width: inherit;
+    height: 50px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.trophyBreakdown {
+    list-style: none;
+    list-style-type: none;
+    position: relative;
+}
+
+.trophyBreakdown li {
+    float: left;
+    display: inline;
+    width: 20%;
+    padding-top: 30px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.platinum {
+    background-image: url('//www.playstation.com/en-us/etc/designs/pdc/clientlibs_base/images/mypdc/platinum.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
+.gold {
+    background-image: url('//www.playstation.com/en-us/etc/designs/pdc/clientlibs_base/images/mypdc/gold.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+
+}
+
+.silver {
+    background-image: url('//www.playstation.com/en-us/etc/designs/pdc/clientlibs_base/images/mypdc/silver.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
+.bronze {
+    background-image: url('//www.playstation.com/en-us/etc/designs/pdc/clientlibs_base/images/mypdc/bronze.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+}
+
+.completion {
+    width: inherit;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+}
+
+.completion span {
+    font-size: 12px;
+    position: relative;
+    bottom: 1px;
+    width: inherit;
+    float: left;
+}
+
+.percentage {
+    width: inherit;
+    height: 15px;
+    background-color: rgba(197, 202, 232, 0.5);
+}
