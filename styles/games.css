@@ -1,17 +1,46 @@
 .gameContainer {
     text-align: center;
+    color: #212121;
 }
 
-.gameLayout {
+.cardContainer {
     width: 320px;
-    height: 176px;
+    height: 216px;
     display: inline-block;
     margin: 0 auto;
     margin-top: 10px;
     margin-left: 10px;
     margin-bottom: 10px;
     margin-right: 10px;
+}
+
+.gameLayout {
+    background-color: #607D8B;
+    width: 320px;
+    height: 216px;
+    position: absolute;;
+    /*box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);*/
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/*.gameLayout:hover {
+     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}*/
+
+.gameInfo {
+    width: inherit;
+    height: 40px;
+    background-color: #FFFFFF;
     position: relative;
+    bottom: 0px;
+    text-align: left;
+}
+
+.gameInfoTitle {
+    position: absolute;
+    top: 10px;
+    padding-left: 15px;
 }
 
 .gameDetails {
@@ -21,7 +50,8 @@
     top: 0px;
     left: 0px;
     opacity: 0;
-    background-color: rgba(3, 3, 3, 0.5);
+    color: #212121;
+    background-color: #FFF;
     transition: opacity 0.5s ease-in-out;
 }
 

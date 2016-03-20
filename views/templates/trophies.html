@@ -1,23 +1,28 @@
-<div class='container-fluid gameContainer'>
-    <div class='gameLayout' ng-repeat='game in games'>
-        <img class='gameImages' ng-src='{{game.avatar}}' />
-        <div class='gameDetails'>
-            <div class='gameTitle'>
-                {{game.title}}
-                </br>
-                <span>{{game.platforms.join(', ')}}</span>
+<div class='gameContainer' ng-cloak>
+    <md-card class='cardContainer md-accent' ng-repeat='game in games' ng-click='showDialog($event, game)'>
+        <div class='gameLayout' center-card>
+            <img class='gameImage' ng-src='{{game.avatar}}' />
+            <div class='gameInfo'>
+                <div class='gameInfoTitle'>{{game.title | truncate: 30}}</div>
             </div>
+            <!-- <div class='gameDetails'>
+                <div class='gameTitle'>
+                    {{game.title}}
+                    </br>
+                    <span>{{game.platforms.join(', ')}}</span>
+                </div>
 
-            <div class='trophyWrapper'>
-                <ul class='trophyBreakdown'>
-                    <li ng-repeat='trophy in trophyOrder' class='{{trophy}}'>{{game.trophies[trophy]}}</li>
-                </ul>
-            </div>
+                <div class='trophyWrapper'>
+                    <ul class='trophyBreakdown'>
+                        <li ng-repeat='trophy in trophyOrder' class='{{trophy}}'>{{game.trophies[trophy]}}</li>
+                    </ul>
+                </div>
 
-            <div class='completion'>
-                <span>{{game.progress}}% Complete</span>
-                <div class='percentage' style='width:{{game.progress}}%'></div>
-            </div>
+                <div class='completion'>
+                    <span>{{game.progress}}% Complete</span>
+                    <div class='percentage' style='width:{{game.progress}}%'></div>
+                </div>
+            </div> -->
         </div>
-    </div>
+    </md-card>
 </div>

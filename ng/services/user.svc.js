@@ -8,13 +8,21 @@ angular.module('trophyDraw')
             }).then(function (response) {
                 return response.data;
             });
-        }
+        };
 
         svc.publicID = function (username) {
-            return $http.post('publicID', {
+            return $http.post('/publicID', {
                 PSNID: username
             }).then(function (response) {
                 return response.data;
-            })
-        }
+            });
+        };
+
+        svc.gameSearch = function (game) {
+            var query = '/gameSearch?title=' + encodeURIComponent(game.toLowerCase());
+
+            return $http.get(query).then(function (response) {
+                return response.data;
+            });
+        };
     });

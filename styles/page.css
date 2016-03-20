@@ -1,20 +1,23 @@
 body {
-    background-color: #607D8B;
-    font-family: verdana, arial;
+    background-color: #FFF;
+    /*font-family: verdana, arial;*/
     color: #FFF;
 }
 
+.fixed {
+    position: fixed;
+}
+
 .navbar * {
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    transition: all 1s ease;
 }
 
 .navbar {
     margin-bottom: 20px;
-    background-color: rgba(63, 61, 181, 0.8);
-    -webkit-transition: all 0.5s ease;
+    background-color: #3F51B5;
     transition: all 0.5s ease;
     height: 120px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
 }
 
 .shrinkNav {
@@ -34,10 +37,12 @@ body {
 }
 
 .liveContent {
-    margin-top: 130px;
+    margin-top: 74px;
 }
 
 .trophyTotals {
+    position: absolute;
+    float: right;
     margin: auto;
     height: 50px;
     width: 288px;
@@ -47,27 +52,28 @@ body {
     padding: 18px;
 }
 
-.slide {
+.slideup {
     position: absolute;
-    left: 0;
     top: 0;
-    width: 100%;
+    left: 0;
+    right: 0;
     height: 100%;
 }
-.slide.ng-enter,
-.slide.ng-leave {
+.slideup.ng-enter,
+.slideup.ng-leave {
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
+    transition-delay: 0.5s;
 }
-.slide.ng-enter {
-    left: 100%;
+.slideup.ng-enter {
+    top: 100%;
 }
-.slide.ng-enter-active {
-    left: 0;
+.slideup.ng-enter-active {
+    top: 0;
 }
-.slide.ng-leave {
-    left: 0;
+.slideup.ng-leave {
+    top: 0;
 }
-.slide.ng-leave-active {
-    left: -100%;
+.slideup.ng-leave-active {
+    top: -100%;
 }

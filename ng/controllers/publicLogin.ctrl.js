@@ -15,9 +15,9 @@ angular.module('trophyDraw')
                         user: user
                     });
                 });
-        }
+        };
 
         $scope.privateLogin = function (username, password) {
             // Placeholder
-        }
+        };
     });

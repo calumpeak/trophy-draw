@@ -1,4 +1,5 @@
 var app = angular.module('trophyDraw',[
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ngMaterial'
 ]);

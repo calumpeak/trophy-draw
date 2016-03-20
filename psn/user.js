@@ -6,7 +6,7 @@ function getPsnUser (username, callback) {
         headers: {
             Origin: 'https://www.playstation.com'
         }
-    }
+    };
 
     request(reqOptions, callback);
 }

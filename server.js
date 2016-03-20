@@ -3,6 +3,7 @@
 const express   = require('express');
 const psn       = require('playstation-trophies');
 const psnUser   = require('./psn/user');
+const game      = require('./psn/game');
 const path      = require('path');
 const app       = express();
 const parser    = require('body-parser');
@@ -31,7 +32,17 @@ app.post('/publicID', (req, res) => {
 
         res.send(userData);
     });
-})
+});
+
+app.get('/gameSearch', (req, res) => {
+    game.get(req.query.title, req, (err, info, userData) => {
+        if (err) {
+            return console.error(err);
+        }
+
+        res.send(userData);
+    });
+});
 
 // Listen on port
 app.listen(port, () => {
