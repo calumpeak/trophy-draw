@@ -19,28 +19,28 @@ angular.module('trophyDraw')
         function TrophyDialog ($scope, $mdDialog, game) {
             $scope.game = game;
 
-            UserSvc.gameSearch(game.title).then(function (searchData) {
-                if (searchData.error === 'OK') {
-                    var data;
-
-                    searchData.results.some(function (result) {
-                        if (result.deck) {
-                            data = result;
-                            return true;
-                        }
-                    });
-
-                    if (data.description) {
-                        var tmp = document.createElement("DIV");
-                        tmp.innerHTML = data.description;
-                        data.description = tmp.textContent || tmp.innerText || "";
-                    }
-                    
-                    // Rudimentary way of returning data from results
-                    // Issue - may be wrong title as this is a generic search
-                    $scope.gameData = data;
-                }
-            });
+            // UserSvc.gameSearch(game.title).then(function (searchData) {
+            //     if (searchData.error === 'OK') {
+            //         var data;
+            //
+            //         searchData.results.some(function (result) {
+            //             if (result.deck) {
+            //                 data = result;
+            //                 return true;
+            //             }
+            //         });
+            //
+            //         if (data.description) {
+            //             var tmp = document.createElement("DIV");
+            //             tmp.innerHTML = data.description;
+            //             data.description = tmp.textContent || tmp.innerText || "";
+            //         }
+            //
+            //         // Rudimentary way of returning data from results
+            //         // Issue - may be wrong title as this is a generic search
+            //         $scope.gameData = data;
+            //     }
+            // });
 
             $scope.hide = function () {
                 $mdDialog.hide();

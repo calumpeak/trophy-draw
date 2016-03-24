@@ -19,7 +19,7 @@ gulp.task('css', () => {
     gulp.src(['styles/*.css'])
         .pipe(concat('trophyDraw.css'))
     .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('watch:js', ['js', 'css'], () => {
     gulp.watch(['ng/**/*.js', 'styles/*.css'], ['js', 'css']);

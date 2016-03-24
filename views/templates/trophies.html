@@ -1,5 +1,5 @@
 <div class='gameContainer' ng-cloak>
-    <md-card class='cardContainer md-accent' ng-repeat='game in games' ng-click='showDialog($event, game)'>
+    <md-card class='cardContainer md-accent' ng-repeat='game in games | filter:searchGame' ng-click='showDialog($event, game)'>
         <div class='gameLayout' center-card>
             <img class='gameImage' ng-src='{{game.avatar}}' />
             <div class='gameInfo'>

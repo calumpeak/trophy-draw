@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trophy Draw</title>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet' integrity='sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==' crossorigin='anonymous'> -->
     <link href='/trophyDraw.css' rel='stylesheet'>
 
@@ -15,16 +17,45 @@
     <script type="text/javascript" src="/trophyDraw.js"></script>
 </head>
 
-<body ng-app="trophyDraw" ng-controller="ApplicationCtrl" ng-cloak>
-    <md-toolbar class="md-primary md-hue-2 md-whiteframe-5dp fixed">
+<body ng-app="trophyDraw" layout="row" ng-controller="ApplicationCtrl" md-swipe-right="toggleSlide('left')"ng-cloak>
+
+<div layout="column" layout-fill>
+
+    <md-toolbar layout="column" layout-align="center start" class="md-primary md-hue-2 md-whiteframe-5dp fixed">
         <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleSlide('left')">
+                <i class="material-icons">menu</i>
+            </md-button>
+
             <h2>
                 <span>Trophy Draw</span>
             </h2>
+
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="search" ng-click="searchToggle()">
+                <i class="material-icons">search</i>
+            </md-button>
+            <div ng-class="searchActive ? 'searchExpand' : 'searchCollapse'">
+                <input id="search" ng-model="searchGame" md-autofocus class="search" label="search"></input>
+            </div>
         </div>
+
     </md-toolbar>
 
-    <div class='liveContent slideup' ng-view></div>
+    <md-content flex class='liveContent' ng-view></md-content>
+
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-4dp"
+        md-component-id="left"
+        md-disable-backdrop>
+      <md-toolbar class="md-tall">
+        <h1 class="md-toolbar-tools">{{userData.handle}}</h1>
+      </md-toolbar>
+      <md-content layout-padding>
+
+      </md-content>
+    </md-sidenav>
+
+</div>
 
 </body>
 </html>

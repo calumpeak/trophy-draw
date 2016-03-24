@@ -4,6 +4,27 @@ body {
     color: #FFF;
 }
 
+.searchCollapse {
+    width: 0px;
+    transition: width 0.8s ease-in-out;
+}
+
+.searchExpand {
+    width: 130px;
+    transition: width 0.8s ease-in-out;
+}
+
+.search {
+    color: #FFFFFF;
+    background-color: transparent;
+    width: inherit;
+    border: none;
+    border-bottom: solid 1px #FFFFFF;
+    outline: none;
+    padding: 0;
+    margin:0;
+}
+
 .fixed {
     position: fixed;
 }
@@ -37,7 +58,8 @@ body {
 }
 
 .liveContent {
-    margin-top: 74px;
+    margin-top: 64px;
+    overflow: visible !important
 }
 
 .trophyTotals {
