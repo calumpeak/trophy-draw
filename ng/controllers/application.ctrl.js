@@ -1,5 +1,5 @@
 angular.module('trophyDraw')
-    .controller('ApplicationCtrl', function ($scope, $location, $route, $mdSidenav) {
+    .controller('ApplicationCtrl', function ($scope, $location, $route, $mdSidenav, $timeout) {
         $scope.$on('publicTrophies', function (event, args) {
             $scope.psnID = args.username;
             $scope.games = args.games;
@@ -27,13 +27,32 @@ angular.module('trophyDraw')
             return games;
         })();
 
+        function focusSearch (focus) {
+            if (focus) {
+                $timeout(function () {
+                    search.focus();
+                }, 800);
+            } else {
+                search.blur();
+            }
+        }
+
         $scope.searchActive = false;
         $scope.searchToggle = function () {
             $scope.searchActive = !$scope.searchActive;
+            focusSearch($scope.searchActive);
         };
 
         $scope.toggleSlide = function toggleSlide(ID) {
             $mdSidenav(ID).toggle();
+        };
+
+        $scope.swipeSlide = function swipeSlide (ID, direction) {
+            if (direction === 'right') {
+                $mdSidenav(ID).open();
+            } else {
+                $mdSidenav(ID).close();
+            }
         };
 
         $scope.userData = {"handle":"echoes221","avatarUrl":"//static-resource.np.community.playstation.net/avatar_m/WWS_E/E0003_m.png","isPlusUser":"1","curLevel":"9","progress":"90","trophies":{"bronze":"479","gold":"21","platinum":"1","silver":"85"},"totalLevel":""};

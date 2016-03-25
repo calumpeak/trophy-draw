@@ -4,6 +4,16 @@ body {
     color: #FFF;
 }
 
+.login {
+    width: 320px;
+    height: 320px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
 .searchCollapse {
     width: 0px;
     transition: width 0.8s ease-in-out;
@@ -12,6 +22,10 @@ body {
 .searchExpand {
     width: 130px;
     transition: width 0.8s ease-in-out;
+}
+
+#searchButton {
+    margin-right: 0;
 }
 
 .search {

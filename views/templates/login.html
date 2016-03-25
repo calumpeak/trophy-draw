@@ -1,10 +1,16 @@
 <div class='container'>
-    <h1>Login</h1>
-    <form ng-submit='publicLogin(username)'>
-        <div class='form-group'>
-            <label>PSN ID</label>
-            <input class='form-control' type='text' ng-model='username'>
-        </div>
-        <input class='btn btn-success btn-lg btn-block' type='submit' value='login'>
-    </form>
+    <md-card class="login">
+        <md-card-title>Login</md-card-title>
+        <form ng-submit='publicLogin(username)'>
+            <md-input-container>
+                <label>PSN ID</label>
+                <input required class='form-control' type='text' ng-model='username'>
+                <md-button class="button md-raised md-accent" value="login" type="submit">Go!</md-button>
+                   <div ng-if="requesting" class="spinner" layout="row" layout-sm="column" layout-align="space-around">
+                       <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                   </div>
+            </md-input-container>
+            <!-- <input class='btn btn-success btn-lg btn-block' type='submit' value='login'> -->
+        </form>
+    </md-card>
 </div>
