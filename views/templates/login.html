@@ -1,16 +1,20 @@
-<div class='container'>
-    <md-card class="login">
-        <md-card-title>Login</md-card-title>
-        <form ng-submit='publicLogin(username)'>
-            <md-input-container>
-                <label>PSN ID</label>
-                <input required class='form-control' type='text' ng-model='username'>
-                <md-button class="button md-raised md-accent" value="login" type="submit">Go!</md-button>
-                   <div ng-if="requesting" class="spinner" layout="row" layout-sm="column" layout-align="space-around">
-                       <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-                   </div>
-            </md-input-container>
-            <!-- <input class='btn btn-success btn-lg btn-block' type='submit' value='login'> -->
-        </form>
-    </md-card>
+<div class="container">
+    <form class="login" ng-submit="publicLogin(username, email, password)">
+        <md-input-container class="md-block">
+            <label>PSN ID</label>
+            <input required class="form-control" type="text" ng-model="username">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>EMAIL</label>
+            <input class="form-control" type="text" ng-model="email">
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>PASSWORD</label>
+            <input class="form-control" type="password" ng-model="password">
+        </md-input-container>
+        <md-button class="button md-raised md-accent" value="login" type="submit">Go!</md-button>
+           <div ng-if="requesting" class="spinner" layout="row" layout-sm="column" layout-align="space-around">
+               <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+           </div>
+    </form>
 </div>

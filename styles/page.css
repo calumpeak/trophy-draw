@@ -5,14 +5,18 @@ body {
 }
 
 .login {
-    width: 320px;
-    height: 320px;
+    width: 70%;
+    height: 350px;
     margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.spinner {
+    float: right;
 }
 .searchCollapse {
     width: 0px;
